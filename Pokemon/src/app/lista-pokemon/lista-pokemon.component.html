@@ -1,1 +1,18 @@
 <h1>Listado fácil de Pokémon</h1>
+
+
+<mat-card class="card">
+    <mat-card-header>
+      <div mat-card-avatar class="imagen"></div>
+      <mat-card-title>Shiba Inu</mat-card-title>
+      <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png" alt="Bulbasur">
+    <mat-card-content>
+
+      <p l *ngFor="let pokemon of listadoPokemon">{{pokemon.name}}     
+      </p>
+    </mat-card-content>
+  </mat-card>
+  
+  

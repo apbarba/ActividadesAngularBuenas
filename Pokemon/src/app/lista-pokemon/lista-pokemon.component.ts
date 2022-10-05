@@ -17,7 +17,7 @@ export class ListaPokemonComponent implements OnInit {
 
     this.pokemonService.pokemonList().subscribe(response => {  //Cuando llege el dato del servidor, se guardará los datos en esa variable que hemos creado
 
-      this.listadoPokemon = response.results
+      this.listadoPokemon = response.results;
     });
 
   }
