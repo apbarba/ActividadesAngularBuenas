@@ -21,5 +21,7 @@ export class PokemonService {
 
     return this.http.get(`${API_BASE_URL} /pokemon/${id}`);
   }
+
+  
 }
 
