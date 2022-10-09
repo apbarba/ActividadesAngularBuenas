@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { FilmsResponse} from '../interfaces/personajes-response.interface';
 import { Observable } from 'rxjs';
-import { PersonajesResponse} from '../interfaces/personajes-response.interface';
 
 const API_URL_PERSONAJES = 'https://swapi.dev/api';
 
@@ -13,8 +13,14 @@ export class PersonajesService {
 
   constructor(private http: HttpClientModule) { }
 
-  public personajeList() : Observable<PersonajesResponse>{
+  public personajeList() : Observable<FilmsResponse>{
 
-    return this.http.get<PersonajesResponse>(`${API_URL_PERSONAJES} /personajes`);
+    return this.http.get<FilmsResponse>(`${API_URL_PERSONAJES} /films/`);
+  }
+
+  public peliculasList(url: string): Observable<FilmsResponse>{
+
+    return this.http.get<FilmsResponse>(`${url}`);
+
   }
 }
