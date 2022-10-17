@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
 import { FilmsResponse} from '../interfaces/personajes-response.interface';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 const API_URL_PERSONAJES = 'https://swapi.dev/api';
@@ -11,7 +11,7 @@ const API_URL_PERSONAJES = 'https://swapi.dev/api';
 export class PersonajesService {
 
 
-  constructor(private http: HttpClientModule) { }
+  constructor(private http: HttpClient) { } //En el private no se declara el HttpClientModule, ya que importará errores en el get
 
   public personajeList() : Observable<FilmsResponse>{
 
