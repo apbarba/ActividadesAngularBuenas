@@ -1,0 +1,11 @@
+<h1>LISTA DE 50 POKEMON</h1>
+
+<p>Por favor , seleccione un pokemon para poder ver sus detalles</p>
+
+<select name="seleccionarP" [(ngModel)] = "seleccionado">
+
+    <option [ngValue]="item" *ngFor="let item of listPokemon">{{item.name}}</option>
+
+</select>
+
+
