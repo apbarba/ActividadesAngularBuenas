@@ -1,11 +1,35 @@
+<div>
+
 <h1>LISTA DE 50 POKEMON</h1>
 
 <p>Por favor , seleccione un pokemon para poder ver sus detalles</p>
 
-<select name="seleccionarP" [(ngModel)] = "seleccionado">
+<mat-form-field appearance="fill">
 
-    <option [ngValue]="item" *ngFor="let item of listPokemon">{{item.name}}</option>
+    <mat-label>Choose one</mat-label>
 
-</select>
+    <mat-select name="seleccionarP" [(ngModel)]="pokemon">
+
+        <mat-option [value]="item" *ngFor="let item of listPokemon">{{item.name}}</mat-option>
 
 
+    </mat-select>
+
+</mat-form-field>
+
+    <mat-card style="
+            width: max-content;
+            background-color: rgb(116, 116, 116);
+            ">
+
+        <img [src]="getFoto(pokemon!=null?pokemon.url:'')" width="100px" height="100px">
+
+    </mat-card>
+
+</div>
+
+<!--
+    Hay que poner mat, luego utilizamos un if y un else para el metodo de las
+    fotos para que si no hay nada que devuelva una foto cualquiera y si hay un
+    pokémon, se devuelva la foto de ese pokémon
+-->

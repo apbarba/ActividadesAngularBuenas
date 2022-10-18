@@ -10,6 +10,7 @@ import { PokemonDespregableService } from '../services/pokemon-despregable.servi
 })
 export class PokemonListComponent implements OnInit {
 
+  pokemon?: Pokemon;
   listPokemon: Pokemon[] = [];
   pokemonSelec: PokemonDetailResponse | undefined;
 
@@ -23,17 +24,27 @@ export class PokemonListComponent implements OnInit {
     })
   }
 
-  getFoto(pokemon : Pokemon){
+  getFoto(url: string) {
 
-    let id = pokemon.url.split("/").reverse()[1];
-    debugger;
+    if(url ==''){
 
-    return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`;
+      return 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/151.png';
+
+    }else{
+
+
+    let id = url.split("/").reverse()[1];
+    return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/${id}.png`;
   }
 
-  getCapturar() {
+}
 
-    this.listPokemon;
+
+  getCapturar(pokemon: Pokemon) {
+
+    this.pokemon = pokemon;
+
+    return this.pokemon;
   }
 
 }

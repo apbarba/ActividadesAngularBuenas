@@ -15,11 +15,11 @@ export class PokemonDespregableService {
 
   public pokemonList(): Observable<PokemonResponse>{
 
-    return this.http.get<PokemonResponse>(`${API_BASE_URL}/pokemon/`);
+    return this.http.get<PokemonResponse>(`${API_BASE_URL}/pokemon?limit=50`);
 
   }
 
-  public getPojemonDetalles(pokemon: Pokemon): Observable<PokemonDetailResponse>{
+  public getPokemonDetalles(pokemon: Pokemon): Observable<PokemonDetailResponse>{
 
     let id = pokemon.url.split("/").reverse()[1];
 
