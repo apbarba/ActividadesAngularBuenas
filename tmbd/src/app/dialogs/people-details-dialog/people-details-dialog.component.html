@@ -1,0 +1,16 @@
+<h1 mat-dialog-title>{{data.peopleInfo.name}}</h1>
+
+<div mat-dialog-content>
+    <ul>
+        <li>Fecha de Nacimiento: {{data.peopleInfo.birthday}}</li>
+        <li>Fecha de Fallecimiento: {{data.peopleInfo.deathday}}</li>
+        <li>Lugar de Nacimiento: {{data.peopleInfo.place_of_birth}}</li>
+        <li>Género: {{data.peopleInfo.gender}}</li>
+        <li>Adulto: {{data.peopleInfo.adult}}</li>
+        <li>Biografia: {{data.peopleInfo.biography}}</li>
+    </ul>
+
+    <div mat-dialog-actions>
+        <button mat-button mat-dialog-close>Cerrar</button>
+    </div>
+</div>

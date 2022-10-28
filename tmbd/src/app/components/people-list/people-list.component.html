@@ -1,3 +1,27 @@
 <h1>List People</h1>
 
-<p *ngFor="let item of peopleList">{{item.name}}</p>
+
+<mat-card *ngFor="let p of peopleList">
+    <img mat-card-lg-image [src]="getLookImg(p)" alt="">
+
+    <mat-card-content>
+        <p>
+            {{p.name}}
+        </p>
+    </mat-card-content>
+
+    <mat-card-actions>
+        <button mat-button (click)="getPeopleDetails(p)">Ver Información Completa</button>
+    </mat-card-actions>
+</mat-card>
+
+
+
+
+<!--<div *ngFor="let p of peopleList">
+
+    <p> {{p.name}}  </p>
+    <img [src]="getLookImg(p)" alt="">
+
+</div>
+!-->

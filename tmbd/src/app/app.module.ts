@@ -8,13 +8,17 @@ import { PeopleListComponent } from './components/people-list/people-list.compon
 import { HttpClientModule } from '@angular/common/http';
 import { MaterialsImportModule } from './material-imports/material-imports.module';
 import { FormsModule } from '@angular/forms';
+import { PeopleDetailsDialogComponent } from './dialogs/people-details-dialog/people-details-dialog.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
+
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    PeopleListComponent
+    PeopleListComponent,
+    PeopleDetailsDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +26,8 @@ import { FormsModule } from '@angular/forms';
     BrowserAnimationsModule,
     HttpClientModule,
     MaterialsImportModule,
-    FormsModule
+    FormsModule,
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]

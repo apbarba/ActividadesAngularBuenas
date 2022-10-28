@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { People, PeopleResponse } from 'src/app/interfaces/people.interfaces';
+import { MatDialog } from '@angular/material/dialog';
+import { PeopleDetailsDialogComponent } from 'src/app/dialogs/people-details-dialog/people-details-dialog.component';
+import { PeopleDetailsResponse } from 'src/app/interfaces/people-details.interfaces';
+import { People, PeopleResponse } from 'src/app/interfaces/people.interface';
 import { PeopleService } from 'src/app/services/people.service';
 
 @Component({
@@ -10,18 +13,20 @@ import { PeopleService } from 'src/app/services/people.service';
 export class PeopleListComponent implements OnInit {
 
   peopleList: People[] = [];
+  peopleSelected: PeopleDetailsResponse | undefined;
 
-  constructor(private peopleService: PeopleService) { }
+  constructor(private peopleService: PeopleService, public dialog: MatDialog) { }
 
 
   ngOnInit(): void {
+    this.getPeoplePage();
   }
 
-  getPeoplePage(people: PeopleResponse){
+  getPeoplePage(){
 
-    this.peopleService.getPeople().subscribe((res) => {
+    this.peopleService.getPeople().subscribe((resp) => {
 
-      this.peopleList = people.results;
+      this.peopleList = resp.results;
 
     });
   }
@@ -30,7 +35,24 @@ export class PeopleListComponent implements OnInit {
 
     let id = people.id;
 
-    return `https://api.themoviedb.org/3/person/${id}/images?api_key=api_key=e375f35a8ed2c4c685f14c49cc598088`;
+    return `https://image.tmdb.org/t/p/w500/${people.profile_path}`;
+  }
+
+  getPeopleDetails(people: People){
+
+    this.peopleService.getPeopleDetails(people).subscribe(resp => {
+
+      this.peopleSelected = resp;
+      this.dialog.open(PeopleDetailsDialogComponent, {
+
+        data: {
+
+          peopleInfo: this.peopleSelected,
+        },
+
+      });
+
+    });
   }
 
 }
