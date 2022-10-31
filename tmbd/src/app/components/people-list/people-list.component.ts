@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { PeopleDetailsDialogComponent } from 'src/app/dialogs/people-details-dialog/people-details-dialog.component';
 import { PeopleDetailsResponse } from 'src/app/interfaces/people-details.interfaces';
-import { People, PeopleResponse } from 'src/app/interfaces/people.interface';
+import { People } from 'src/app/interfaces/people.interface';
 import { PeopleService } from 'src/app/services/people.service';
 
 @Component({

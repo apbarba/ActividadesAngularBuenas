@@ -10,6 +10,7 @@ import { MaterialsImportModule } from './material-imports/material-imports.modul
 import { FormsModule } from '@angular/forms';
 import { PeopleDetailsDialogComponent } from './dialogs/people-details-dialog/people-details-dialog.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { LoginComponent } from './components/login/login.component';
 
 
 
@@ -18,7 +19,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
   declarations: [
     AppComponent,
     PeopleListComponent,
-    PeopleDetailsDialogComponent
+    PeopleDetailsDialogComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
