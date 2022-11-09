@@ -1,0 +1,27 @@
+
+  <div class="container px-4 mx-auto flex flex-wrap items-center justify-between">
+
+    <span
+        [ngStyle]="{ 'align-self': 'center', 'text-align': 'start' }"
+        *ngFor="let in of counter(); let i = index">
+        <button (click)="getSpeciesPage(i + 1)">{{ i + 1 }}</button>
+    </span>
+
+    <div *ngFor="let species of speciesList">
+  
+    <div class="content">
+    
+      <mat-card class="mat-elevation-z4">
+
+        <mat-card-content>
+
+          <img class="card-img-top" mat-card-image [src]="getShowImg(species)">
+
+          <p>{{species.name}}</p>
+
+        </mat-card-content>
+        
+      </mat-card>
+    </div>
+  </div>
+  </div>
