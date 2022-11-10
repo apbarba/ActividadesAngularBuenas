@@ -13,6 +13,8 @@ export class GasService {
 
   getGasolinera(): Observable<GasResponse>{
     
-    return this.http.get<GasResponse>(`${environment.apiBaseUrl}/PreciosCarburantes/EstacionesTerrestres/`)
+    return this.http.get<GasResponse>(`${environment.apiBaseUrl}`)
   }
 }
+
+///PreciosCarburantes/EstacionesTerrestres/

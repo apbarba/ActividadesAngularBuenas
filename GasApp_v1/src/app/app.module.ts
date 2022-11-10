@@ -7,7 +7,6 @@ import { GasComponent } from './components/gas/gas.component';
 import { HttpClientModule } from "@angular/common/http";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialImportsModule } from './material-imports/material-imports.module';
-import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -20,8 +19,7 @@ import { FormsModule } from '@angular/forms';
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MaterialImportsModule,
-    FormsModule
+    MaterialImportsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

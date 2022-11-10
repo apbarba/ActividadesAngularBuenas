@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { GasResponse } from 'src/app/interfaces/gas.interfaces';
+import { Gasolinera, GasResponse } from 'src/app/interfaces/gas.interfaces';
 import { GasService } from 'src/app/services/gas.service';
 
 @Component({
@@ -9,7 +9,7 @@ import { GasService } from 'src/app/services/gas.service';
 })
 export class GasComponent implements OnInit {
 
-gasolineraList = 'string'
+gasolineraList : Gasolinera[]=[];
 
   constructor(private gasServices: GasService) { }
 
@@ -20,16 +20,7 @@ gasolineraList = 'string'
   getListadoGas(){
 
     this.gasServices.getGasolinera().subscribe((resp) => {
-
-      this.gasolineraList = resp['Precio Gasoleo A']
-      this.gasolineraList = resp['Precio Gasoleo B']
-      this.gasolineraList = resp['Precio Gasoleo Premium']
-      this.gasolineraList = resp['Precio Gasolina 95 E10']
-      this.gasolineraList = resp['Precio Gasolina 95 E5']
-      this.gasolineraList = resp['Precio Gasolina 95 E5 Premium']
-      this.gasolineraList = resp['Precio Gasolina 98 E10']
-      this.gasolineraList = resp['Precio Gasolina 98 E5']
-      this.gasolineraList = resp['Precio Hidrogeno']
+        this.gasolineraList=resp.ListaEESSPrecio;
     })
   }
 

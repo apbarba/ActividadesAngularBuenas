@@ -1,7 +1,11 @@
 
   //  gasolinero['Dirección']
-    
-        export interface GasResponse {
+    export interface GasResponse {
+      Fecha:string;
+      ListaEESSPrecio: Gasolinera [];
+  
+    }
+        export interface Gasolinera {
             'C.P.': string;
             'Dirección': string;
             'Horario': string;
