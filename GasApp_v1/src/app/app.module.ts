@@ -7,12 +7,14 @@ import { GasComponent } from './components/gas/gas.component';
 import { HttpClientModule } from "@angular/common/http";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialImportsModule } from './material-imports/material-imports.module';
+import { FiltrarComponent } from './components/filtrar/filtrar.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    GasComponent
+    GasComponent,
+    FiltrarComponent
   ],
   imports: [
     BrowserModule,

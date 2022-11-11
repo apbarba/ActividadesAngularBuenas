@@ -1,14 +1,43 @@
-<div *ngFor="let gas of gasolineraList">
-  <p>{{ gas["Rótulo"] }}</p>
-  <p>{{ gas["Precio Gasoleo A"] }}</p>
-  <p>{{ gas["Precio Gasoleo B"] }}</p>
-  <p>{{ gas["Precio Gasoleo Premium"] }}</p>
-  <p>{{ gas["Precio Gasolina 95 E10"] }}</p>
-  <p>{{ gas["Precio Gasolina 95 E5"] }}</p>
-  <p>{{ gas["Precio Gasolina 95 E5 Premium"] }}</p>
-  <p>{{ gas["Precio Gasolina 98 E10"] }}</p>
-  <p>{{ gas["Precio Gasolina 98 E5"] }}</p>
-  <p>{{ gas["Precio Hidrogeno"] }}</p>
-  <br />
-  <br />
+
+
+<div>
+  <p>Seleccione por precio</p>
+  <mat-slider aria-label="unit(s)"></mat-slider>
+</div>
+
+<mat-drawer-container class="example-container">
+  <mat-drawer-content>
+    <mat-form-field appearance="fill">
+      <mat-label>Seleccione Carburante</mat-label>
+      <mat-select #mode value="side">
+        <mat-option value="side">Gasolina</mat-option>
+        <mat-option value="over">Hidrogeno</mat-option>
+        <mat-option value="push">Gasoi</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </mat-drawer-content>
+</mat-drawer-container>
+
+
+<div *ngFor="let gas of gasolineraList" class= "container px-4 mx-auto flex flex-wrap items-center justify-between">
+  <mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-title>{{ gas["Rótulo"] }}</mat-card-title>
+    </mat-card-header>
+    <img mat-card-image src="https://th.bing.com/th/id/OIP.9_m5fuANxHrPoyEnWUo6AgHaE7?pid=ImgDet&rs=1" alt="Photo of a Shiba Inu">
+    <mat-card-content>
+      <p>{{ gas["Precio Gasoleo A"] }}</p>
+      <p>{{ gas["Precio Gasoleo B"] }}</p>
+      <p>{{ gas["Precio Gasoleo Premium"] }}</p>
+      <p>{{ gas["Precio Gasolina 95 E10"] }}</p>
+      <p>{{ gas["Precio Gasolina 95 E5"] }}</p>
+      <p>{{ gas["Precio Gasolina 95 E5 Premium"] }}</p>
+      <p>{{ gas["Precio Gasolina 98 E5"] }}</p>
+      <p>{{ gas["Precio Hidrogeno"] }}</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button>Nada</button>
+      <button mat-button>Nada</button>
+    </mat-card-actions>
+  </mat-card>
 </div>

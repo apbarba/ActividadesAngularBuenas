@@ -3,7 +3,10 @@
     export interface GasResponse {
       Fecha:string;
       ListaEESSPrecio: Gasolinera [];
-  
+      precioGasolina: Gasolina[];
+      precioHidrogeno: Hidrogeno[];
+      precioGasoi: Gasoi[];
+
     }
         export interface Gasolinera {
             'C.P.': string;
@@ -28,7 +31,7 @@
             'Precio Gasolina 98 E10': string;
             'Precio Gasolina 98 E5': string;
             'Precio Hidrogeno': string;
-            'Provincia': string;
+            'Provincia': Provincia[];
             'Remisión': string;
             'Rótulo': string;
             'Tipo Venta': string;
@@ -40,3 +43,32 @@
             'IDCCAA': string;
         }
     
+        export interface Gasolina{
+
+          'Precio Gasolina 95 E10': string;
+          'Precio Gasolina 95 E5': string;
+          'Precio Gasolina 95 E5 Premium': string;
+          'Precio Gasolina 98 E10': string;
+          'Precio Gasolina 98 E5': string;
+
+        }
+
+        export interface Gasoi{
+
+          'Precio Gasoleo A': string;
+          'Precio Gasoleo B': string;
+          'Precio Gasoleo Premium': string;
+        }
+
+        export interface Hidrogeno{
+
+          'Precio Hidrogeno': string;
+
+        }
+
+        export interface Provincia {
+          IDPovincia: string;
+          IDCCAA: string;
+          Provincia: string;
+          CCAA: string;
+      }
