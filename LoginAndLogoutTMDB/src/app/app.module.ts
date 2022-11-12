@@ -9,6 +9,10 @@ import { HttpClientModule } from "@angular/common/http";
 import { PeopleListComponent } from './components/people-list/people-list.component';
 import { MaterialsImportModule } from './material-imports/material-imports.module';
 import { PeopleDetailsDialogComponent } from './dialogs/people-details-dialog/people-details-dialog.component';
+import { AdminComponent } from './components/header/admin/admin.component';
+import { AuthComponent } from './components/header/auth/auth.component';
+import { AdminNavbarComponent } from './components/navbar/admin-navbar/admin-navbar.component';
+import { AuhtNavbarComponent } from './components/navbar/auht-navbar/auht-navbar.component';
 
 
 
@@ -17,7 +21,11 @@ import { PeopleDetailsDialogComponent } from './dialogs/people-details-dialog/pe
     AppComponent,
     AccountComponent,
     PeopleListComponent,
-    PeopleDetailsDialogComponent
+    PeopleDetailsDialogComponent,
+    AdminComponent,
+    AuthComponent,
+    AdminNavbarComponent,
+    AuhtNavbarComponent
   ],
   imports: [
     BrowserModule,
