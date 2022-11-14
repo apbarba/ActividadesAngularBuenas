@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "gasapp-8b47d": {
+      "hosting": {
+        "gasApp": [
+          "gasapp-8b47d"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "gasapp-8b47d"
+  }
+}
