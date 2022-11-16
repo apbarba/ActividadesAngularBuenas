@@ -1,0 +1,12 @@
+
+
+<header>
+    Listado de Pokemon con sus respectivos detalles con Inpit y Output
+</header>
+
+<div *ngFor="let pokemon of pokemonList">
+
+    <p>{{pokemon.name}}</p>
+    <img [src]="getImg(pokemon.url)" alt="">
+
+</div>
