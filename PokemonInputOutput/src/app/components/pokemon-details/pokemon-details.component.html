@@ -1,0 +1,31 @@
+<header>
+    Listado de Pokemon con sus respectivos detalles con Inpit y Output
+</header>
+
+<mat-card class="nada">
+    
+    <mat-card-title>{{pokemon.name}}</mat-card-title>
+
+    <mat-card-subtitle>{{{pokemon.pokemon.id}}</mat-card-subtitle>
+
+</mat-card>
+
+
+<div *ngFor="let pokemon of pokemonList">
+    <div>
+
+        <img [src]="getImg(pokemon.url)" alt="">
+        <p>{{pokemon.name}}</p>
+
+    </div>
+
+    <div>
+        <p>{{tipo.type.name}}</p>
+    </div>
+
+    <div>
+        <p>{{ability.ability.name}}</p>
+    </div>
+
+    <div>{{move.move.name}}</div>
+</div>

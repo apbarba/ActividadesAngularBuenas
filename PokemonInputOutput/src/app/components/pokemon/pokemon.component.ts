@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { Pokemon } from 'src/app/interfaces/pokemon.interfaces';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Pokemon, PokemonDetails } from 'src/app/interfaces/pokemon.interfaces';
 import { PokemonService } from 'src/app/service/pokemon.service';
 
 @Component({
@@ -10,6 +10,7 @@ import { PokemonService } from 'src/app/service/pokemon.service';
 export class PokemonComponent implements OnInit {
 
   pokemonList: Pokemon[] = [];
+  getPokemonDetailsEvent = new EventEmitter<PokemonDetails>();
 
   constructor(private pokemonServices: PokemonService) { }
 
@@ -21,10 +22,22 @@ export class PokemonComponent implements OnInit {
 
     })  }
 
-  getImg(url: string){
+    getPokemonById(pokemon: Pokemon){
+      
+      let pokemonDetails: PokemonDetails;
 
-    let id = url.split("/").reverse()[1];
-    return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/${id}.png`;
-  }
+      this.pokemonServices.getPokemonDetails(pokemon.url.split('/').reverse()[1]).subscribe(resp => {
+        
+        pokemonDetails = resp;
+        
+        this.getPokemonDetailsEvent.emit(pokemonDetails);
+      });
+    }
+
+    getImg(url: string){
+
+      let id = url.split("/").reverse()[1];
+      return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/${id}.png`;
+    }
 
   }
